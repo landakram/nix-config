@@ -7,6 +7,7 @@
     ./zsh
     ./git
     ./gpg
+    ./cli.nix
     ./packages.nix
   ];
 

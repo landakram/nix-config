@@ -37,6 +37,8 @@ with pkgs.stdenv; with lib; {
   home-manager.users.mark = import ./home.nix;
   home-manager.useGlobalPkgs = true;
 
+  # Add home-manager applications to `system.build.applications` so they will be linked
+  # by services.link-apps.
   system.build.applications = pkgs.lib.mkForce (pkgs.buildEnv {
     name = "applications";
     paths = config.environment.systemPackages ++ config.home-manager.users.mark.home.packages;

@@ -66,7 +66,7 @@ in
         src="$(/usr/bin/stat -f%Y $f)"
         appname="$(basename $src)"
         dest=${cfg.dest}/$appname
-        rm $dest
+        [ -f $dest ] && rm $dest
         ${createMacOSAlias} "''${src}" "''${dest}"
       done
     '';

@@ -17,3 +17,8 @@
      darwin-rebuild switch
    #+end_src
  
+** Alfred
+
+Mac apps built with Nix don't play well with Alfred / spotlight search. To work around this, we create aliases for nix applications and place them in ~~/Applications/Nix~. See [[https://github.com/LnL7/nix-darwin/issues/139][this issue]] for more context.
+
+We need to configure Alfred to index aliases by going to ~Alfred Preferences -> Features -> Default Results -> Extras -> Advanced...~ and dragging in one of the aliases in ~~/Applications/Nix~.

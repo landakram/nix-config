@@ -43,6 +43,12 @@ with pkgs.stdenv; with lib; {
     pathsToLink = "/Applications";
   });
 
+  services.link-apps = {
+    enable = true;
+    userName = config.users.users.mark.name;
+    userHome = config.users.users.mark.home;
+  };
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;

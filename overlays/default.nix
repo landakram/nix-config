@@ -1,3 +1,4 @@
-self: super: {
-  Firefox = super.callPackage ./firefox {};
-}
+[
+  (import ./firefox)
+  (import ./emacs)
+]

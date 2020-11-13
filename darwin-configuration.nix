@@ -8,7 +8,7 @@ with pkgs.stdenv; with lib; {
 
   nix.nixPath = options.nix.nixPath.default;
 
-  nixpkgs.overlays = [ (import ./overlays) ];
+  nixpkgs.overlays = import ./overlays;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget

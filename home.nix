@@ -28,13 +28,13 @@
 
   programs.firefox = {
     enable = true;
-    package = pkgs.Firefox;
+    package = pkgs.firefox;
   };
 
   programs.fzf.enable = true;
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsMacport;
+    package = pkgs.emacs;
   };
 }

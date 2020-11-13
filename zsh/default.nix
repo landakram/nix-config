@@ -13,7 +13,6 @@
     };
 
     history = {
-      path = ".zsh-history";
       save = 10000;
       share = true;
       size = 10000;

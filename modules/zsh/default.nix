@@ -2,8 +2,7 @@
 
 with lib; let
   cfg = config.landakram.programs.zsh;
-in
-{
+in {
   options = {
     landakram.programs.zsh = {
       enable = mkEnableOption "landakram's zsh";

@@ -4,6 +4,7 @@ with pkgs;
 {
   home.packages = [
     htop
+    wget
     fortune
     tree
     ripgrep
@@ -13,6 +14,10 @@ with pkgs;
     clojure
     python3
     ruby
+    cabal-install
+    ghc
+    clang
+    cachix
     #racket
     #chicken
   ];

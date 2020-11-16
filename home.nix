@@ -16,6 +16,8 @@
 
   programs.home-manager.enable = true;
 
+  landakram.programs.zsh.enable = true;
+
   programs.go.enable = true;
 
   programs.keychain = {

@@ -1,3 +1,5 @@
+# This isn't actually used anymore. Just here for reference.
+
 export PATH=/usr/local/Cellar/chicken/5.2.0/bin/:$PATH
 export PATH=/usr/local/Cellar/gnupg/2.2.19/bin/:$PATH
 export PATH=/usr/local/bin/libimobiledevice:$PATH

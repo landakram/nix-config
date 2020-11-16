@@ -1,24 +1,31 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
+with lib; let
+  cfg = config.landakram.programs.zsh;
+in
 {
-  # Since we do not install home-manager, you need to let home-manager
-  # manage your shell, otherwise it will not be able to add its hooks
-  # to your profile.
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-
-    shellAliases = {
-      vi = "vim";
+  options = {
+    landakram.programs.zsh = {
+      enable = mkEnableOption "landakram's zsh";
     };
+  };
 
-    history = {
-      save = 10000;
-      share = true;
-      size = 10000;
-    };
+  config = mkIf cfg.enable {
+    programs.zsh = {
+      enable = true;
+      enableCompletion = true;
 
-    initExtra = ''
+      shellAliases = {
+        vi = "vim";
+      };
+
+      history = {
+        save = 10000;
+        share = true;
+        size = 10000;
+      };
+
+      initExtra = ''
       function virtualenv_info { [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') ' }
 
       bindkey -e
@@ -51,7 +58,7 @@
       zstyle ':filter-select' extended-search yes # see below
     '';
 
-    envExtra = ''
+      envExtra = ''
       export NVM_LAZY_LOAD=true
       export NVM_COMPLETION=true
       export EDITOR=vim
@@ -59,27 +66,28 @@
       export JAVA_HOME="$(/usr/libexec/java_home)"
     '';
 
-    zplug = {
-      enable = true;
-      plugins = [
-        {
-          name = "landakram/lambda-mod-zsh-theme";
-          tags = ["as:theme"];
-        }
-        {
-          name = "zsh-users/zsh-autosuggestions";
-        }
-        {
-          name = "lukechilds/zsh-nvm";
-        }
-        {
-          name = "zsh-users/zaw";
-        }
-        {
-          name = "zsh-users/zsh-syntax-highlighting";
-          tags = ["defer:2"];
-        }
-      ];
+      zplug = {
+        enable = true;
+        plugins = [
+          {
+            name = "landakram/lambda-mod-zsh-theme";
+            tags = ["as:theme"];
+          }
+          {
+            name = "zsh-users/zsh-autosuggestions";
+          }
+          {
+            name = "lukechilds/zsh-nvm";
+          }
+          {
+            name = "zsh-users/zaw";
+          }
+          {
+            name = "zsh-users/zsh-syntax-highlighting";
+            tags = ["defer:2"];
+          }
+        ];
+      };
     };
   };
 }

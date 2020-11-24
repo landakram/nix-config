@@ -18,7 +18,9 @@ with pkgs;
     ghc
     clang
     cachix
-    #racket
     #chicken
+    racket-minimal
+    ipfs
+    graphviz
   ];
 }

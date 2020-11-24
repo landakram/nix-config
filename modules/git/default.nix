@@ -47,5 +47,9 @@ in {
         "dump.rdb"
       ];
     };
+
+    home.packages = with pkgs; [
+      git-lfs
+    ];
   };
 }

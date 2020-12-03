@@ -18,9 +18,14 @@ with pkgs;
     ghc
     clang
     cachix
-    #chicken
+    chicken
     racket-minimal
     ipfs
     graphviz
+    ansible
+    sshpass
+    kubectl
+    watch
+    inkscape
   ];
 }

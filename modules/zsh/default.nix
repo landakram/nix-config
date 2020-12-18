@@ -76,6 +76,9 @@ in {
             name = "zsh-users/zsh-autosuggestions";
           }
           {
+            name = "zsh-users/zsh-history-substring-search";
+          }
+          {
             name = "lukechilds/zsh-nvm";
           }
           {

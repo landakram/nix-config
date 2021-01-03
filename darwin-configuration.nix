@@ -6,7 +6,6 @@ with pkgs.stdenv; with lib; {
     ./link-apps
   ];
 
-  nix.nixPath = options.nix.nixPath.default;
   nix.useSandbox = true;
 
   nixpkgs.overlays = import ./overlays;

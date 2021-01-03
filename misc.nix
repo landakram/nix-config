@@ -13,6 +13,7 @@ with pkgs;
     bfg-repo-cleaner
     clojure
     python3
+    python37Packages.pipx
     ruby
     cabal-install
     ghc
@@ -27,5 +28,11 @@ with pkgs;
     kubectl
     watch
     inkscape
+    # TODO: Results in an error
+    # sandbox-exec: pattern serialization length 67173 exceeds maximum (65535)
+    # https://github.com/NixOS/nix/issues/4119
+    # texlive.combined.scheme-medium
+
+    solc
   ];
 }

@@ -58,11 +58,14 @@ in {
     '';
 
       envExtra = ''
+      export PATH=~/.local/bin:/usr/local/texlive/2016/bin/x86_64-darwin/:~/go/bin/:$PATH
       export NVM_LAZY_LOAD=true
       export NVM_COMPLETION=true
       export EDITOR=vim
       export CLICOLOR=1
       export JAVA_HOME="$(/usr/libexec/java_home)"
+
+      export GO111MODULE=on
     '';
 
       zplug = {
